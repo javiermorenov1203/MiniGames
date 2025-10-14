@@ -1,0 +1,14 @@
+.game-button {
+  border-radius: 20%;
+  border-width: 3px;
+  border-color: black;
+  background-color: white;
+  height: 6rem;
+  width: 6rem;
+  font-size: 3rem;
+  padding: 0;
+}
+
+.game-button:hover {
+  background-color: rgb(220, 220, 220);
+}
