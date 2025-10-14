@@ -12,3 +12,7 @@
 .game-button:hover {
   background-color: rgb(220, 220, 220);
 }
+
+.game-title {
+  margin: 0.5rem 0px;
+}

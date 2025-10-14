@@ -6,7 +6,7 @@ export function GameButton({ icon, gameName }) {
     return (
         <div className='game-buttons-container'>
             <button className='game-button' onClick={() => navigate('/TicTacToe')}>{icon}</button>
-            <h4>{gameName}</h4>
+            <p className='game-title'>{gameName}</p>
         </div>
     )
 }
