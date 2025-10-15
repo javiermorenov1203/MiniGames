@@ -1,3 +1,9 @@
+.tic-title {
+    margin-bottom: 40px;
+    margin-top: 10rem;
+    text-align: left;
+}
+
 .board {
     display: grid;
     grid-template-columns: repeat(3, 0fr);
@@ -11,4 +17,53 @@
     background-color: white;
     padding: 0;
     font-size: 2.5rem;
+}
+
+.tile:hover {
+    cursor: pointer;
+    background-color: rgb(188, 188, 188);
+}
+
+.disabled-tile:hover {
+    cursor: default;
+    background-color: rgb(255, 255, 255);
+}
+
+.winning-tile {
+    background-color: green;
+}
+
+.winning-tile:hover {
+    cursor: default;
+    background-color: green;
+}
+
+.restart-button {
+    border-radius: 20px;
+    background-color: rgb(152, 152, 152);
+    border-width: 0;
+    height: 40px;
+    width: 100px;
+    margin-top: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+.restart-button:hover {
+    cursor: pointer;
+    background-color: rgb(116, 116, 116);
+}
+
+.back-button {
+    background: none;
+    border-width: 0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    font-size: 25px;
+    margin-right: 45px;
+}
+
+.back-button:hover {
+    background-color: rgb(201, 201, 201);
 }

@@ -1,37 +1,33 @@
 import { useState } from "react"
+import { useNavigate } from 'react-router-dom'
 import "./TicTacToePage.css"
 
 export default function TicTacToePage() {
 
+    const navigate = useNavigate()
     const icons = ['✖️', '⭕']
     const [current, setCurrent] = useState(0)
+    const [winnerCells, setWinnerCells] = useState([])
     const [board, setBoard] = useState(Array(9).fill(null))
     const winningCombinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
-    var disbledBoard = false
 
     function HandleClick(index) {
-        if (board[index] !== null) {
+        if (board[index] !== null || winnerCells.length > 0) {
             return;
         }
         var updatedBoard = [...board]
         updatedBoard[index] = icons[current]
         setBoard(updatedBoard)
 
-        loop1:
-        for (let i = 0; i < winningCombinations.length; i++) {
-            loop2:
-            for (let j = 0; j < winningCombinations[i].length; j++) {
-                var index = winningCombinations[i][j]
-                if (updatedBoard[index] === icons[current]) {
-                    if (j === 2) {
-                        console.log('Has ganado')
-                        disbledBoard = true
-                        return
-                    }
-                    continue loop2
-                } else {
-                    continue loop1
-                }
+        for (const combo of winningCombinations) {
+            const [a, b, c] = combo;
+            if (
+                updatedBoard[a] &&
+                updatedBoard[a] === updatedBoard[b] &&
+                updatedBoard[a] === updatedBoard[c]
+            ) {
+                setWinnerCells(combo);
+                return;
             }
         }
         setCurrent((current + 1) % 2)
@@ -39,15 +35,31 @@ export default function TicTacToePage() {
 
     return (
         <>
-            <h1>Tic Tac Toe</h1>
-            <p>Select the spot where you want to place the {icons[current]}: </p>
+            <h1 className="tic-title">
+                <button className={'back-button'} onClick={() => navigate('/')}>
+                    ←
+                </button>
+                Tic Tac Toe
+            </h1>
+            <p>Select the cell where you want to place the icon. </p>
+            <p>Turn: {icons[current]}</p>
             <div className='board'>
                 {board.map((value, index) => (
-                    <button className='tile' key={index} onClick={() => HandleClick(index)} disabled={disbledBoard}>
+                    <button className={`tile ${winnerCells.includes(index) ? 'winning-tile' : ''} 
+                            ${value || winnerCells.length > 0 ? 'disabled-tile' : ''}`
+                    }
+                        key={index}
+                        onClick={() => HandleClick(index)}>
                         {value ?? ''}
                     </button>
                 ))}
             </div>
+            <button className={'restart-button'} onClick={() => {
+                setCurrent(0)
+                setWinnerCells([])
+                setBoard(Array(9).fill(null))
+            }
+            }>Restart ↻</button>
         </>
     )
 
