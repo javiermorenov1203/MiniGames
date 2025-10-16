@@ -10,7 +10,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/Minigames/" element={<HomePage />} />
+        <Route path="/Minigames" element={<HomePage />} />
         <Route path="/TicTacToe" element={<TicTacToePage />} />
         <Route path="/MemoryMatch" element={<MemoryMatchPage />} />
       </Routes>
