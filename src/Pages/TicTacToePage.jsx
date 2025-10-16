@@ -11,7 +11,7 @@ export default function TicTacToePage() {
     const [board, setBoard] = useState(Array(9).fill(null))
     const winningCombinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
 
-    function HandleClick(index) {
+    function handleClick(index) {
         if (board[index] !== null || winnerCells.length > 0) {
             return;
         }
@@ -44,7 +44,7 @@ export default function TicTacToePage() {
                             ${value || winnerCells.length > 0 ? 'disabled-tile' : ''}`
                     }
                         key={index}
-                        onClick={() => HandleClick(index)}>
+                        onClick={() => handleClick(index)}>
                         {value ?? ''}
                     </button>
                 ))}
