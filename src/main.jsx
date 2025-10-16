@@ -8,9 +8,9 @@ import MemoryMatchPage from './Pages/MemoryMatchPage.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+     <BrowserRouter basename="/MiniGames">
       <Routes>
-        <Route path="/Minigames" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/TicTacToe" element={<TicTacToePage />} />
         <Route path="/MemoryMatch" element={<MemoryMatchPage />} />
       </Routes>

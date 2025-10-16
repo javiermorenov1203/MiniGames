@@ -36,7 +36,7 @@ export default function TicTacToePage() {
     return (
         <>
             <h1 className="tic-title">
-                <button className={'back-button'} onClick={() => navigate('/Minigames')}>
+                <button className={'back-button'} onClick={() => navigate('/')}>
                     ←
                 </button>
                 Tic Tac Toe
