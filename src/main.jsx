@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
 import HomePage from './Pages/HomePage.jsx'
 import TicTacToePage from './Pages/TicTacToePage.jsx'
+import MemoryMatchPage from './Pages/MemoryMatchPage.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -11,6 +12,7 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/TicTacToe" element={<TicTacToePage />} />
+        <Route path="/MemoryMatch" element={<MemoryMatchPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
