@@ -1,5 +1,6 @@
 import { useState } from "react"
 import GameTitle from "../components/GameTitle"
+import RestartButton from "../components/RestartButton"
 import "./TicTacToePage.css"
 
 export default function TicTacToePage() {
@@ -48,12 +49,13 @@ export default function TicTacToePage() {
                     </button>
                 ))}
             </div>
-            <button className={'restart-button'} onClick={() => {
+            <RestartButton onClick={() => {
                 setCurrent(0)
                 setWinnerCells([])
                 setBoard(Array(9).fill(null))
             }
-            }>Restart ↻</button>
+            }></RestartButton>
+
         </>
     )
 

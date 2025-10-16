@@ -1,5 +1,6 @@
 import { useState } from "react"
 import GameTitle from "../components/GameTitle"
+import RestartButton from "../components/RestartButton"
 import './MemoryMatchPage.css'
 
 export default function MemoryMatchPage() {
@@ -16,6 +17,7 @@ export default function MemoryMatchPage() {
                     <button className="card">{value}</button>
                 ))}
             </div>
+            <RestartButton></RestartButton>
         </>
     )
 }
