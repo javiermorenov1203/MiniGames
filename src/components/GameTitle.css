@@ -1,6 +1,5 @@
 .header {
-    display: flex;
-    width: 400px;
+    display: flex;  
     align-items: center;
     justify-content: center;
     position: relative;

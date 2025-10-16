@@ -1,10 +1,21 @@
+import { useState } from "react"
 import GameTitle from "../components/GameTitle"
+import './MemoryMatchPage.css'
 
 export default function MemoryMatchPage() {
-    
-    return(
+
+    const [cards, setCards] = useState(['🐕', '🐕', '🐕', '🐕', '🐕', '🐕', '🐕', '🐕', '🐕', '🐕'])
+
+
+    return (
         <>
-        <GameTitle title={'Memory Match'}></GameTitle>
+            <GameTitle title={'Memory Match'}></GameTitle>
+            <p>Select the cards and find the matching pairs.</p>
+            <div className="card-container">
+                {cards.map((value, index) => (
+                    <button className="card">{value}</button>
+                ))}
+            </div>
         </>
     )
 }
