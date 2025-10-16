@@ -14,7 +14,7 @@
 
 .tile:hover {
     cursor: pointer;
-    background-color: rgb(188, 188, 188);
+    background-color: rgb(212, 212, 212);
 }
 
 .disabled-tile:hover {
@@ -29,4 +29,20 @@
 .winning-tile:hover {
     cursor: default;
     background-color: green;
+}
+
+.left-tile {
+    border-left: 0;
+}
+
+.upper-tile {
+    border-top: 0;
+}
+
+.right-tile {
+    border-right: 0;
+}
+
+.bottom-tile {
+    border-bottom: 0;
 }

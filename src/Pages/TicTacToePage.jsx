@@ -41,7 +41,11 @@ export default function TicTacToePage() {
             <div className='board'>
                 {board.map((value, index) => (
                     <button className={`tile ${winnerCells.includes(index) ? 'winning-tile' : ''} 
-                            ${value || winnerCells.length > 0 ? 'disabled-tile' : ''}`
+                            ${value || winnerCells.length > 0 ? 'disabled-tile' : ''}
+                            ${[0,3,6].includes(index) ? 'left-tile' : ''}
+                            ${[0,1,2].includes(index) ? 'upper-tile' : ''}
+                            ${[2,5,8].includes(index) ? 'right-tile' : ''}
+                            ${[6,7,8].includes(index) ? 'bottom-tile' : ''}`
                     }
                         key={index}
                         onClick={() => handleClick(index)}>
