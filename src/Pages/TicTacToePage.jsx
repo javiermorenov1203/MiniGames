@@ -1,10 +1,9 @@
 import { useState } from "react"
-import { useNavigate } from 'react-router-dom'
+import GameTitle from "../components/GameTitle"
 import "./TicTacToePage.css"
 
 export default function TicTacToePage() {
 
-    const navigate = useNavigate()
     const icons = ['✖️', '⭕']
     const [current, setCurrent] = useState(0)
     const [winnerCells, setWinnerCells] = useState([])
@@ -35,12 +34,7 @@ export default function TicTacToePage() {
 
     return (
         <>
-            <h1 className="tic-title">
-                <button className={'back-button'} onClick={() => navigate('/')}>
-                    ←
-                </button>
-                Tic Tac Toe
-            </h1>
+            <GameTitle title={'Tic Tac Toe'}></GameTitle>
             <p>Select the cell where you want to place the icon. </p>
             <p>Turn: {icons[current]}</p>
             <div className='board'>

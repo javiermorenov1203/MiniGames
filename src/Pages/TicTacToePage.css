@@ -1,14 +1,7 @@
-.tic-title {
-    margin-bottom: 40px;
-    margin-top: 10rem;
-    text-align: left;
-}
-
 .board {
     display: grid;
     grid-template-columns: repeat(3, 0fr);
     justify-content: center;
-
 }
 
 .tile {
@@ -52,19 +45,4 @@
 .restart-button:hover {
     cursor: pointer;
     background-color: rgb(116, 116, 116);
-}
-
-.back-button {
-    background: none;
-    border-width: 0;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    font-size: 25px;
-    margin-right: 45px;
-}
-
-.back-button:hover {
-    background-color: rgb(201, 201, 201);
-    cursor: pointer;
 }

@@ -1,11 +1,10 @@
-
-
+import GameTitle from "../components/GameTitle"
 
 export default function MemoryMatchPage() {
     
     return(
         <>
-        <h1>Memory Match</h1>
+        <GameTitle title={'Memory Match'}></GameTitle>
         </>
     )
 }
