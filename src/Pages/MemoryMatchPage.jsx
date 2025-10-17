@@ -9,7 +9,7 @@ export default function MemoryMatchPage() {
     const firstAttemptIcon = useRef('');
     const firstAttemptIndex = useRef(null);
     const onWait = useRef(false);
-    const [playerHasWon, setPlayerHaswon] = useState(false);
+    const [playerHasWon, setPlayerHasWon] = useState(false);
 
     const [cards, setCards] = useState(['🐕', '🐕', '🍒', '🍒', '✈️', '✈️', '💍', '💍', '🍉', '🍉'])
     const [isHidden, setIsHidden] = useState(Array(10).fill(true))
@@ -37,15 +37,19 @@ export default function MemoryMatchPage() {
         newHidden[index] = false;
         setIsHidden(newHidden);
 
+        // on first attempt, save icon and index
         if (firstAttempt.current) {
             firstAttemptIcon.current = cards[index]
             firstAttemptIndex.current = index
         } else {
+            // when second card does not match
             if (cards[index] !== firstAttemptIcon.current) {
 
+                // prevent user from clicking another card 
                 onWait.current = true
                 const firstIndex = firstAttemptIndex.current;
 
+                // wait briefly before hiding cards again
                 setTimeout(() => {
                     const updatedHidden = [...newHidden];
                     updatedHidden[index] = true;
@@ -55,15 +59,17 @@ export default function MemoryMatchPage() {
                 }, 700);
             }
 
+            // reset icon and index from first attempt
             firstAttemptIcon.current = ''
             firstAttemptIndex.current = null
         }
 
         firstAttempt.current = !firstAttempt.current
 
+        // if no cards are hidden, then player has won
         if (newHidden.every(value => value === false)) {
             setTimeout(() => {
-                setPlayerHaswon(true)
+                setPlayerHasWon(true)
             }, 700);
         }
     }
@@ -78,7 +84,7 @@ export default function MemoryMatchPage() {
             <p>Select the cards and find the matching pairs.</p>
             <div className="card-container">
                 {playerHasWon || cards.map((value, index) => (
-                    <button key={index} className={`card ${isHidden[index] ? 'hidden-card' : ''}`} onClick={() => handleClick(index)}>
+                    <button key={index} className={`card ${isHidden[index] ? 'hidden-card' : 'revealed-card'}`} onClick={() => handleClick(index)}>
                         <span className="icon">{isHidden[index] ? '❔' : value}</span>
                     </button>
                 ))}
@@ -86,7 +92,7 @@ export default function MemoryMatchPage() {
             </div>
             <RestartButton onClick={() => {
                 setIsHidden(Array(10).fill(true))
-                setPlayerHaswon(false)
+                setPlayerHasWon(false)
                 shuffle(cards)
                 firstAttempt.current = true;
                 firstAttemptIcon.current = '';

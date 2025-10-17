@@ -25,6 +25,10 @@
     background-color: rgb(126, 126, 126);
 }
 
+.revealed-card:hover {
+    cursor: default;
+}
+
 .winning-text {
     width: 100vh;
 }
