@@ -1,0 +1,30 @@
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(5, 0fr);
+    justify-content: center;
+    width: 550px;
+    height: 280px;
+    align-items: center;
+}
+
+.card {
+    border-radius: 5px;
+    border-width: 0;
+    height: 100px;
+    width: 70px;
+    margin: 20px;
+    font-size: 35px;
+    padding: 0;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.hidden-card {
+    background-color: rgb(126, 126, 126);
+}
+
+.winning-text {
+    width: 100vh;
+}

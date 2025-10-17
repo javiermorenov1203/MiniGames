@@ -1,17 +1,17 @@
 import { useState } from "react"
-import { useNavigate } from 'react-router-dom'
+import GameTitle from "../components/GameTitle"
+import RestartButton from "../components/RestartButton"
 import "./TicTacToePage.css"
 
 export default function TicTacToePage() {
 
-    const navigate = useNavigate()
     const icons = ['✖️', '⭕']
     const [current, setCurrent] = useState(0)
     const [winnerCells, setWinnerCells] = useState([])
     const [board, setBoard] = useState(Array(9).fill(null))
     const winningCombinations = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
 
-    function HandleClick(index) {
+    function handleClick(index) {
         if (board[index] !== null || winnerCells.length > 0) {
             return;
         }
@@ -35,31 +35,31 @@ export default function TicTacToePage() {
 
     return (
         <>
-            <h1 className="tic-title">
-                <button className={'back-button'} onClick={() => navigate('/')}>
-                    ←
-                </button>
-                Tic Tac Toe
-            </h1>
+            <GameTitle title={'Tic Tac Toe'}></GameTitle>
             <p>Select the cell where you want to place the icon. </p>
             <p>Turn: {icons[current]}</p>
             <div className='board'>
                 {board.map((value, index) => (
                     <button className={`tile ${winnerCells.includes(index) ? 'winning-tile' : ''} 
-                            ${value || winnerCells.length > 0 ? 'disabled-tile' : ''}`
+                            ${value || winnerCells.length > 0 ? 'disabled-tile' : ''}
+                            ${[0,3,6].includes(index) ? 'left-tile' : ''}
+                            ${[0,1,2].includes(index) ? 'upper-tile' : ''}
+                            ${[2,5,8].includes(index) ? 'right-tile' : ''}
+                            ${[6,7,8].includes(index) ? 'bottom-tile' : ''}`
                     }
                         key={index}
-                        onClick={() => HandleClick(index)}>
+                        onClick={() => handleClick(index)}>
                         {value ?? ''}
                     </button>
                 ))}
             </div>
-            <button className={'restart-button'} onClick={() => {
+            <RestartButton onClick={() => {
                 setCurrent(0)
                 setWinnerCells([])
                 setBoard(Array(9).fill(null))
             }
-            }>Restart ↻</button>
+            }></RestartButton>
+
         </>
     )
 

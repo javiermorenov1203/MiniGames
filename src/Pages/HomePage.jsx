@@ -8,8 +8,10 @@ function HomePage() {
     <>
       <h1>MiniGames Page</h1>
       <p>Welcome to the MiniGames Homepage. <br />Select the game you want to play.</p>
-      <GameButton icon={'❌'} gameName={'Tic Tac Toe'} redirection={'TicTacToe'}></GameButton>
-      <GameButton icon={'🧠'} gameName={'Memory Match'} redirection={'MemoryMatch'}></GameButton>
+      <div className='game-button-container'>
+        <GameButton icon={'❌'} gameName={'Tic Tac Toe'} redirection={'TicTacToe'}></GameButton>
+        <GameButton icon={'🧠'} gameName={'Memory Match'} redirection={'MemoryMatch'}></GameButton>
+      </div>
     </>
   )
 }
