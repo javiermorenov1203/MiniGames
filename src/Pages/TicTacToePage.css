@@ -23,12 +23,12 @@
 }
 
 .winning-tile {
-    background-color: green;
+    background-color: rgb(0, 171, 0);
 }
 
 .winning-tile:hover {
     cursor: default;
-    background-color: green;
+    background-color: rgb(0, 171, 0);;
 }
 
 .left-tile {

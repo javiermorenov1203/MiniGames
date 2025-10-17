@@ -21,3 +21,7 @@
 .hidden-card {
     background-color: rgb(126, 126, 126);
 }
+
+.winning-text {
+    width: 100vh;
+}
