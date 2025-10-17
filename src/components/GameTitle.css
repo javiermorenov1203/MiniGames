@@ -1,10 +1,11 @@
 .header {
-    display: flex;  
+    display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     padding-bottom: 30px;
     padding-top: 100px;
+    width: 550px;
 }
 
 .title {

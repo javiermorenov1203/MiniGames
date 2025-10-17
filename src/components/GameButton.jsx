@@ -4,7 +4,7 @@ import './GameButton.css'
 export function GameButton({ icon, gameName, redirection }) {
     const navigate = useNavigate()
     return (
-        <div>
+        <div className='button-container'>
             <button className='game-button' onClick={() => navigate(`/${redirection}`)}>{icon}</button>
             <p className='game-title'>{gameName}</p>
         </div>
