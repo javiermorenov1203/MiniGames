@@ -2,6 +2,9 @@
     display: grid;
     grid-template-columns: repeat(5, 0fr);
     justify-content: center;
+    width: 550px;
+    height: 280px;
+    align-items: center;
 }
 
 .card {
