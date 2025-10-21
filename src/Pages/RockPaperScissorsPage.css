@@ -13,12 +13,11 @@
     padding-bottom: 20px;
 }
 
-
 .rock-paper-scissor-option-container {
     display: grid;
     justify-content: center;
     align-items: center;
-    margin-left: 20px;
+    margin-left: auto;
 }
 
 .rock-paper-scissor-option {
@@ -42,17 +41,22 @@
     border-color: black;
     border-style: solid;
     border-width: 2px;
-    height: 100px;
+    height: 90px;
     width: 100px;
+    padding-bottom: 10px;
     background-color: rgb(221, 221, 221);
     border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
 }
 
 .rock-paper-scissor-left-panel,
 .rock-paper-scissor-right-panel {
     display: flex;
     align-items: center;
-    width: 250px;
+    width: 280px;
     height: 210px;
 }
 
@@ -73,5 +77,21 @@
     margin-left: auto;
 }
 
+.rps-score-counter {
+    display: grid;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    height: 80px;
+    width: 65px;
+    justify-content: center;
+    align-items: center;
+}
 
+.score-title {
+    padding-top: 10px;
+}
 
+.score-number {
+    padding-bottom: 10px;
+}
