@@ -1,0 +1,77 @@
+.rock-paper-scissor-container {
+    display: flex;
+    justify-content: center;
+}
+
+.rock-paper-scissor-left-container,
+.rock-paper-scissor-right-container {
+    display: grid;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    padding: 0px 20px;
+    padding-bottom: 20px;
+}
+
+
+.rock-paper-scissor-option-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.rock-paper-scissor-option {
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    padding-bottom: 10px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    background-color: rgb(240, 240, 240);
+    border-width: 1px;
+}
+
+.rock-paper-scissor-option:hover {
+    background-color: rgb(190, 190, 190);
+    border-width: 2px;
+    cursor: pointer;
+}
+
+.rock-paper-scissor-option-selected {
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    height: 100px;
+    width: 100px;
+    background-color: rgb(221, 221, 221);
+    border-radius: 20px;
+}
+
+.rock-paper-scissor-left-panel,
+.rock-paper-scissor-right-panel {
+    display: flex;
+    align-items: center;
+    width: 250px;
+    height: 210px;
+}
+
+.rock-paper-scissor-middle-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    width: 100px;
+    padding-top: 35px;
+}
+
+.rock-paper-scissor-left-panel .rock-paper-scissor-option-selected {
+    margin-left: auto
+}
+
+.rock-paper-scissor-right-panel .rps-score-counter {
+    margin-left: auto;
+}
+
+
+
