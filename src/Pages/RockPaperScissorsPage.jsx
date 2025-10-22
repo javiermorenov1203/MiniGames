@@ -44,30 +44,18 @@ export default function RockPaperScissorsPage() {
             if (mySelection === oponetSelection) {
                 myOption.current.style.backgroundColor = 'rgb(116, 116, 116)';
                 oponentOption.current.style.backgroundColor = 'rgb(116, 116, 116)';
-            } else if (mySelection === '👊') {
-                if (oponetSelection === '✌️') {
-                    myOption.current.style.backgroundColor = 'rgb(0, 169, 0)'
-                    myScore.current += 1
-                } else {
-                    oponentOption.current.style.backgroundColor = 'rgb(0, 169, 0)'
-                    oponentScore.current += 1
-                }
-            } else if (mySelection === '✌️') {
-                if (oponetSelection === '👊') {
-                    oponentOption.current.style.backgroundColor = 'rgb(0, 169, 0)'
-                    oponentScore.current += 1
-                } else {
-                    myOption.current.style.backgroundColor = 'rgb(0, 169, 0)'
-                    myScore.current += 1
-                }
-            } else if (mySelection === '✋') {
-                if (oponetSelection === '👊') {
-                    myOption.current.style.backgroundColor = 'rgb(0, 169, 0)'
-                    myScore.current += 1
-                } else {
-                    oponentOption.current.style.backgroundColor = 'rgb(0, 169, 0)'
-                    oponentScore.current += 1
-                }
+            } else if (mySelection === '👊' && oponetSelection === '✌️') {
+                myOption.current.style.backgroundColor = 'rgb(0, 169, 0)'
+                myScore.current += 1
+            } else if (mySelection === '✌️' && oponetSelection === '✋') {
+                myOption.current.style.backgroundColor = 'rgb(0, 169, 0)'
+                myScore.current += 1
+            } else if (mySelection === '✋' && oponetSelection === '👊') {
+                myOption.current.style.backgroundColor = 'rgb(0, 169, 0)'
+                myScore.current += 1
+            } else {
+                oponentOption.current.style.backgroundColor = 'rgb(0, 169, 0)'
+                oponentScore.current += 1
             }
 
             setTimeout(() => {
