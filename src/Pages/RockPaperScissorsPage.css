@@ -1,0 +1,126 @@
+.rock-paper-scissor-container {
+    display: flex;
+    justify-content: center;
+}
+
+.rock-paper-scissor-left-container,
+.rock-paper-scissor-right-container {
+    display: grid;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    padding: 0px 20px;
+    padding-bottom: 20px;
+}
+
+.rock-paper-scissor-option-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+}
+
+.rock-paper-scissor-option {
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    padding-bottom: 10px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    background-color: rgb(240, 240, 240);
+    border-width: 1px;
+}
+
+.rock-paper-scissor-option:hover {
+    background-color: rgb(190, 190, 190);
+    border-width: 2px;
+    cursor: pointer;
+}
+
+.rock-paper-scissor-option-selected {
+    border-color: black;
+    border-style: solid;
+    border-width: 2px;
+    height: 90px;
+    width: 100px;
+    padding-bottom: 10px;
+    background-color: rgb(221, 221, 221);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+
+.rock-paper-scissor-left-panel,
+.rock-paper-scissor-right-panel {
+    display: flex;
+    align-items: center;
+    width: 280px;
+    height: 210px;
+}
+
+.rock-paper-scissor-middle-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    width: 100px;
+    padding-top: 35px;
+}
+
+.rock-paper-scissor-left-panel .rock-paper-scissor-option-selected {
+    margin-left: auto
+}
+
+.rock-paper-scissor-right-panel .rps-score-counter {
+    margin-left: auto;
+}
+
+.rps-score-counter {
+    display: grid;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    height: 80px;
+    width: 65px;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-title {
+    padding-top: 10px;
+}
+
+.score-number {
+    padding-bottom: 10px;
+}
+
+.rps-button-container {
+    display: grid;
+    justify-content: center;
+}
+
+#play-button {
+    background-color: rgb(0, 169, 0);
+    border-style: none;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#play-button:hover {
+    cursor: pointer;
+    background-color: green;
+}
+
+#play-button:disabled {
+    background-color: rgb(152, 152, 152);
+}
+
+#play-button:disabled:hover {
+    cursor: not-allowed;
+}

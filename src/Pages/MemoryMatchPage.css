@@ -22,7 +22,15 @@
 }
 
 .hidden-card {
-    background-color: rgb(126, 126, 126);
+    background-color: rgb(183, 183, 183);
+}
+
+.hidden-card:hover {
+    background-color: rgb(168, 168, 168);
+}
+
+.revealed-card:hover {
+    cursor: default;
 }
 
 .winning-text {

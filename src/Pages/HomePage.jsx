@@ -11,6 +11,7 @@ function HomePage() {
       <div className='game-button-container'>
         <GameButton icon={'❌'} gameName={'Tic Tac Toe'} redirection={'TicTacToe'}></GameButton>
         <GameButton icon={'🧠'} gameName={'Memory Match'} redirection={'MemoryMatch'}></GameButton>
+        <GameButton icon={'✂️'} gameName={'Rock, Paper & Scissors'} redirection={'RockPaperScissors'}></GameButton>
       </div>
     </>
   )

@@ -1,7 +1,12 @@
+.button-container {
+  width: 116px;
+}
+
 .game-button {
   border-radius: 20%;
   border-width: 3px;
   border-color: black;
+  border-style: solid;
   background-color: white;
   height: 6rem;
   width: 6rem;

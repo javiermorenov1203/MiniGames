@@ -7,8 +7,8 @@ export default function GameTitle({ title }) {
 
     return (
         <div className="header">
-            <h1 className="title">{title}</h1>
             <button className={'back-button'} onClick={() => navigate('/')}>←</button>
+            <h1 className="title">{title}</h1>
         </div>
     )
 
