@@ -8,6 +8,15 @@ export default function RockPaperScissorsPage() {
 
     const [optionSelected, setOptionSelected] = useState('')
     const [oponentOptionSelected, setOponentOptionSelected] = useState('')
+    const options = ['👊', '✌️', '✋']
+
+    function handlePlay() {
+
+        setOponentOptionSelected(options[Math.floor(Math.random() * 3)])
+
+
+        //document.getElementById('my-option').textContent
+    }
 
     return (
         <>
@@ -25,7 +34,7 @@ export default function RockPaperScissorsPage() {
                             <button className="rock-paper-scissor-option" onClick={() => setOptionSelected('✌️')}>✌️</button>
                             <button className="rock-paper-scissor-option" onClick={() => setOptionSelected('✋')}>✋</button>
                         </div>
-                        <div className="rock-paper-scissor-option-selected">
+                        <div id="my-option" className="rock-paper-scissor-option-selected">
                             {optionSelected}
                         </div>
                     </div>
@@ -37,7 +46,7 @@ export default function RockPaperScissorsPage() {
                 <div className="rock-paper-scissor-right-container">
                     <h3 className="rock-paper-scissor-player-title">Oponent</h3>
                     <div className="rock-paper-scissor-right-panel">
-                        <div className="rock-paper-scissor-option-selected">
+                        <div id="oponent-option" className="rock-paper-scissor-option-selected">
                             {oponentOptionSelected}
                         </div>
                         <div className="rps-score-counter">
@@ -47,7 +56,10 @@ export default function RockPaperScissorsPage() {
                     </div>
                 </div>
             </div>
-            <RestartButton ></RestartButton>
+            <div className="rps-button-container">
+                <button onClick={() => handlePlay()} id="play-button" disabled={!optionSelected}>Play</button>
+                <RestartButton ></RestartButton>
+            </div>
         </>
     )
 }
