@@ -12,10 +12,38 @@ export default function RockPaperScissorsPage() {
 
     function handlePlay() {
 
-        setOponentOptionSelected(options[Math.floor(Math.random() * 3)])
+        let timeOut = 100
 
+        while (timeOut < 1000) {
+            setTimeout(() => {
+                setOponentOptionSelected(options[0])
+            }, timeOut);
+            timeOut += 100
+            setTimeout(() => {
+                setOponentOptionSelected(options[1])
+            }, timeOut);
+            timeOut += 100
+            setTimeout(() => {
+                setOponentOptionSelected(options[2])
+            }, timeOut);
+            timeOut += 100
+        }
 
-        //document.getElementById('my-option').textContent
+        setTimeout(() => {
+            const oponetSelection = options[Math.floor(Math.random() * 3)]
+            setOponentOptionSelected(oponetSelection)
+            const mySelection = document.getElementById('my-option').textContent
+            if (mySelection === oponetSelection) {
+                console.log('Empate')
+            } else if (mySelection === '👊') {
+                if (oponetSelection === '✌️') {
+                    console.log('Has ganado')
+                } else {
+                    console.log('Has perdido')
+                }
+            }
+        }, 1000);
+
     }
 
     return (
